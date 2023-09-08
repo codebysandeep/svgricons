@@ -1,0 +1,12 @@
+{
+  "dimensions": true,
+  "ext": "js",
+  "icon": true,
+  "svgo": true,
+  "svgProps": {
+    "aria-label": "{title}",
+    "role": "img",
+    "tabindex": "-1"
+  },
+  "titleProp": true
+}
