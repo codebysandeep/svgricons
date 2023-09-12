@@ -1,12 +1,14 @@
 {
-  "dimensions": true,
+  "dimensions": false,
   "ext": "js",
   "icon": true,
   "svgo": true,
   "svgProps": {
-    "aria-label": "{title}",
     "role": "img",
-    "tabindex": "-1"
+    "aria-label": "{title}"
   },
-  "titleProp": true
+  "titleProp": true,
+  "replaceAttrValues": {
+    "#535B62": "currentColor"
+  }
 }

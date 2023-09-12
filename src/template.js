@@ -1,19 +1,19 @@
-const propTypesTemplate = (
-  { imports, interfaces, componentName, props, jsx, exports },
+const myTemplate = (
+  { imports, interfaces, componentName, props, jsx, exports, title },
   { tpl }
 ) => {
   return tpl`${imports}
 ${interfaces}
 
 function ${componentName}(${props}) {
-  return (
-    ${jsx}
-    <div>{title ? <title id={titleId}>{title}</title> : ${componentName}}</div>
-  );
+  if (title === undefined) {
+    const getTitle = '${componentName}'.slice(3);
+    title = getTitle;
+  }
+  return ${jsx};
 }
-
 ${exports}
   `;
 };
 
-module.exports = propTypesTemplate;
+module.exports = myTemplate;

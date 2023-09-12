@@ -1,14 +1,29 @@
 import logo from "./logo.svg";
-import { Dollar, Notification } from "./components/index";
+import {
+  Dollar,
+  JoinTalent,
+  Info,
+  AmfamAlertTriangleFill1,
+  Notification,
+} from "./components/index";
 import "./App.css";
 
 function App() {
   return (
     <>
-      {/* I want: Default without adding title attribute in DOM it should render title with value as componentName Example: title="dollar" */}
+      {/* It's working :: without title attribute */}
       <Dollar />
 
-      {/* It's working */}
+      {/* It's working :: without title attribute */}
+      <JoinTalent />
+
+      {/* It's working :: without title attribute */}
+      <Info />
+
+      {/* It's working :: without title attribute */}
+      <AmfamAlertTriangleFill1 title="AMFAM Triangle" />
+
+      {/* It's working :: with title attribute */}
       <Notification title="Stop Notification" />
     </>
   );

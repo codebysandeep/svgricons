@@ -1,16 +1,16 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 function SvgNotification({ title, titleId, ...props }) {
+  if (title === undefined) {
+    const getTitle = "SvgNotification".slice(3);
+    title = getTitle;
+  }
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
       fill="none"
       viewBox="0 0 24 24"
-      aria-label={title}
       role="img"
-      tabindex="-1"
+      aria-label={title}
       aria-labelledby={titleId}
       {...props}
     >
@@ -25,7 +25,4 @@ function SvgNotification({ title, titleId, ...props }) {
     </svg>
   );
 }
-SvgNotification.propTypes = {
-  SvgNotification: PropTypes.string,
-};
 export default SvgNotification;
