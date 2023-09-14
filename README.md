@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# SVGR Integration for Rendering SVG Elements in React Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project leverages [SVGR](https://react-svgr.com), a powerful tool for transforming SVGs into React components. SVGR simplifies the integration of SVG graphics into your React applications.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Before you can start using SVGR, you'll need to install it as a command-line tool and configure it to work with your project. Follow these steps:
 
-### `npm start`
+1. Install SVGR as a development dependency using npm:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install --save-dev @svgr/cli
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configure SVGR
 
-### `npm test`
+To fine-tune SVGR according to your project's requirements, create a .svgrrc file and specify the desired options. You can explore all available configuration options in the [SVGR Options](https://react-svgr.com/docs/options/) documentation. Here's an example of a configuration file:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+{
+  "dimensions": true,
+  "icon": true,
+  "svgo": true,
+  "svgProps": {
+    "role": "img",
+    "width": "32px",
+    "height": "32px"
+  },
+  "titleProp": true
+}
+```
 
-### `npm run build`
+## Transform SVGs into React Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To convert SVG files into React components, run the following script within your project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npx @svgr/cli src/svg --out-dir src/components/js
+npx @svgr/cli src/svg --out-dir src/components/tsx --typescript
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Transform SVGs into React Components with SVGR Custom Template
 
-### `npm run eject`
+You can further personalize your React components by using SVGR Custom Templates. This allows you to create React components that match your project's unique style and requirements. Here's how to use a custom template:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npx @svgr/cli src/svg --out-dir src/components/js --template src/template.js
+npx @svgr/cli src/svg --out-dir src/components/tsx --template src/template.js --typescript
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+By specifying the --template option in the CLI, you can override the default template for custom rendering.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For more advanced usage and customization options, explore the following SVGR documentation:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [SVGR Options](https://react-svgr.com/docs/options/): Discover the various configuration options available for SVGR.
+- [SVGR Custom Template](https://react-svgr.com/docs/custom-templates/): Learn how to create custom templates for generating React components from SVGs.

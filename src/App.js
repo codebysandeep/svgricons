@@ -1,31 +1,19 @@
-import logo from "./logo.svg";
-import {
-  Dollar,
-  JoinTalent,
-  Info,
-  AmfamAlertTriangleFill1,
-  Notification,
-} from "./components/index";
+import { Dollar, Info } from "./components/js/index";
 import "./App.css";
 
 function App() {
   return (
-    <>
-      {/* It's working :: without title attribute */}
-      <Dollar />
+    <div>
+      <h1>Icon Demo</h1>
 
-      {/* It's working :: without title attribute */}
-      <JoinTalent />
+      <section className="demo">
+        {/* It's working :: without title attribute, but it will show <title> tag with default value as component name */}
+        <Dollar />
 
-      {/* It's working :: without title attribute */}
-      <Info />
-
-      {/* It's working :: without title attribute */}
-      <AmfamAlertTriangleFill1 title="AMFAM Triangle" />
-
-      {/* It's working :: with title attribute */}
-      <Notification title="Stop Notification" />
-    </>
+        {/* It's working :: with title attribute */}
+        <Info title="Important Information" />
+      </section>
+    </div>
   );
 }
 
